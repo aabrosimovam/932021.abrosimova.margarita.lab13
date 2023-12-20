@@ -1,0 +1,13 @@
+@using _932021.abrosimova.margarita.lab11.Models
+@model IEnumerable<QuestionPageModel>
+@{ int i = 0;
+    ViewData["Title"] = "Quiz Result";
+}
+<h1>@ViewData["Title"]</h1>
+<h2>Right Answers @IdentityMap.rights out @IdentityMap.alls</h2>
+@foreach (QuestionPageModel a in Model)
+{
+    i++;
+    <div>@i. @a.Problem   @a.yanswer</div>
+}    
+@{IdentityMap.Up();}

@@ -1,0 +1,15 @@
+@model QuestionPageModel
+@{
+    ViewData["Title"] = "Quiz";
+}
+<h1>@ViewData["Title"]</h1>
+<form method="post">
+    <div>@Model.Problem</div>
+    <input type="number" name="yanswer"/><span asp-validation-for="yanswer"></span><br />
+    <input type="submit" name="action" value="Next" class=" btn btn-outline-dark mr-1 mt-3" />
+    <input type="submit" name="action" value="Finish" class="btn btn-primary mt-3" />
+    <input style="display:none" name="problem" value="@Model.Problem">
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
